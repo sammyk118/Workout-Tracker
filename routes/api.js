@@ -30,15 +30,6 @@ router.get("/api/workouts/range", function (req, res) {
             res.status(400).json(err);
         });
 });
-router.post("/api/workouts/range", function (req, res) {
-    Workout.create({})
-        .then(dbWorkout => {
-            res.json(dbWorkout);
-        })
-        .catch(err => {
-            res.status(400).json(err);
-        });
-});
 router.put("/api/workouts/:id", function ({ body, params }, res) {
     Workout.findByIdAndUpdate(
         params.id,
